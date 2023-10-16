@@ -3,18 +3,73 @@
         <title>First website</title>
         <meta charset="utf-8" />
         <meta name="description" content="This is our first html page" />
-        <link href="./assets/css/external.css" rel="stylesheet"/>
+        <link href="./assets/external.css" rel="stylesheet"/>
         <script src="./assets/js/external.js"></script>
         <style>
-            /* css code */
+            /* css syntax
+            
+                selector {
+                    property: value;
+                }
+            
+            */
+            body {
+                background-color: white;
+                background: url(./assets/sample-image.jpg);
+                background-position: center;
+                background-size: contain;
+            }
+
+            /* CSS selectors */
+
+                /* id selector (#) */
+                #para1 {
+                    font-size: 25px;
+                }
+
+                /* class selector (.) */
+                .paragraph {
+                    font-weight: bold;
+                }
+
+                /* tag selector */
+                p {
+                    color: chocolate;
+                }
+
+                /* grouping selector (,) */
+                table, td, th {
+                    border: 3px dashed red;
+                }
+
+                /* universal selector (*) */
+                table * {
+                    color: rgb(207, 1, 207);
+                }
+
+                /* attribute selector */
+                img[src="./assets/sample-image.jpg"] {
+                    height: 250px;
+                    
+                }
+
+                /* descendent selector */
+
+                /* child selector */
+
+                /* adjacent selector */
+
+                /* sibling selector */
+
+
         </style>    
     </head>
     <body>
         <!-- body of the website -->
 
         <!-- basic tags -->
-        <p>This is a paragraph tag</p>
-        <p>This is another paragraph tag</p>
+        <p id="para1">This is a paragraph tag</p>
+        <p class="paragraph">This is another paragraph tag</p>
         hello world
         <div>This is a div tag</div>
         <span>This is a span tag</span><br />
@@ -74,6 +129,7 @@
         <marquee direction="up" height="200px"><center><p><span style="color: red;">HTML</span> stands for <mark>Hypertext <del>Marking</del><ins>Markup</ins> Language</mark></p></center></marquee>
 
         <br><br><hr><br><br>
+        <img src="./assets/sample-image.jpg" height="150px" />
 
         <!-- list tags -->
         <ol type="i">
@@ -109,6 +165,7 @@
 
         <br><br><hr><br><br>
         
+        <img src="./assets/sample-image.jpg" height="150px" />
         <!-- table tags -->
         <table border="1px">
             <caption>Student Details</caption>
@@ -145,11 +202,6 @@
         </table>
 
 
-        <style>
-            table,td,th {
-                border: 2px solid green;
-            }
-        </style>
         <table>
             <caption>Employee Information</caption>
 
