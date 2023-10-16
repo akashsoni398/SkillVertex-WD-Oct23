@@ -8,5 +8,5 @@
           Reference - https://www.tutorialrepublic.com/html-reference/html5-tags.php (skip obsolete tags and attributes)
           Format - Word+PDF file
           Contents - UI Screenshots and HTML code
-          Due Date - 5th Nov, 2023
+          Due Date - 19th Oct, 2023
 
