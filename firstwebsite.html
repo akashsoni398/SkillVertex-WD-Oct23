@@ -1,0 +1,287 @@
+<html>
+    <head>
+        <title>First website</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="This is our first html page" />
+        <link href="./assets/css/external.css" rel="stylesheet"/>
+        <script src="./assets/js/external.js"></script>
+        <style>
+            /* css code */
+        </style>    
+    </head>
+    <body>
+        <!-- body of the website -->
+
+        <!-- basic tags -->
+        <p>This is a paragraph tag</p>
+        <p>This is another paragraph tag</p>
+        hello world
+        <div>This is a div tag</div>
+        <span>This is a span tag</span><br />
+        <span>This is another span tag</span>
+        <hr />
+        
+        <pre>
+            dfdsfsdfds  sdf  sdf        dsfsdf sd         dfdsfsdfdsdf
+            
+            dsfsdf
+        </pre>
+
+        <br><br><hr><br><br>
+
+        <!-- semantics tags -->
+        <header></header>
+        <nav></nav>
+        <section>
+            <main></main>
+            <aside></aside>
+        </section>
+        <footer></footer>
+        <time></time>
+
+        <br><br><hr><br><br>
+
+        <!-- multimedia tags -->
+        <img src="./assets/sample-image.jpg" height="150px" />
+        <audio controls>
+            <source src="https://d6cp9b00-a.akamaihd.net/downloads/ringtones/files/mp3/dil-hai-k-manta-nahi-60987.mp3" type="audio/mpeg">
+        </audio>
+        <video controls>
+            <source src="https://vod-progressive.akamaized.net/exp=1697052514~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F402%2F14%2F352012012%2F1427930342.mp4~hmac=be18d0bc76140f6deb9b92da1e0f501b39c2683b83678ca199f079d63dd6bf79/vimeo-prod-skyfire-std-us/01/402/14/352012012/1427930342.mp4" />
+        </video>
+        <embed width="560" height="315" src="https://www.youtube.com/embed/iFUFFUb5W4w?si=VFc99HHSC6PAsTb9" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iFUFFUb5W4w?si=VFc99HHSC6PAsTb9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <embed height="500px" width="500px" width src="https://getbootstrap.com/docs/5.3/getting-started/introduction/">
+        
+        <br><br><hr><br><br>
+
+        <!-- formatting tags -->
+        <b>Bold Tag</b>
+        <i>Italics Tag</i>
+        <u>Underline Tag</u>
+        <br>
+        <strong>Bold</strong>
+        <em>Italic</em>
+        <ins>Underline</ins>
+
+        <br>
+
+        2<sup>2</sup>=4
+        <br>
+        <sub>2</sub>√9=3
+
+        <marquee direction="up" height="200px"><center><p><span style="color: red;">HTML</span> stands for <mark>Hypertext <del>Marking</del><ins>Markup</ins> Language</mark></p></center></marquee>
+
+        <br><br><hr><br><br>
+
+        <!-- list tags -->
+        <ol type="i">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+            <li>List Item 5</li>
+        </ol>
+
+        <ul type="square">
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+
+        <dl>
+            <dt>Nmap - Computer program</dt>
+            <dd>Nmap is a network scanner created by Gordon Lyon. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses. Nmap provides a number of features for probing computer networks, including host discovery and service and operating system detection.</dd>
+        </dl>
+
+        <br><br><hr><br><br>
+
+        <!-- heading tags -->
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <br><br><hr><br><br>
+        
+        <!-- table tags -->
+        <table border="1px">
+            <caption>Student Details</caption>
+            <thead>
+                <tr>
+                    <th colspan="2">Student Name</th>
+                    <th>Address</th>
+                    <th>Phone No.</th>
+                    <th>Email Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Akash Soni</td>
+                    <td>Bangalore</td>
+                    <td>534534245</td>
+                    <td>akash@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Akash Soni</td>
+                    <td>Bangalore</td>
+                    <td>534534245</td>
+                    <td>akash@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Akash Soni</td>
+                    <td>Bangalore</td>
+                    <td>534534245</td>
+                    <td>akash@gmail.com</td>
+                </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+
+        <style>
+            table,td,th {
+                border: 2px solid green;
+            }
+        </style>
+        <table>
+            <caption>Employee Information</caption>
+
+            <colgroup>
+                <col span="2" style="background-color: cyan;" />
+                <col span="2" />
+                <col span='3' style="background-color: aquamarine;" />
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="2">Name</th>
+                    <th rowspan="2">Email Address</th>
+                    <th rowspan="2">Mob</th>
+                    <th colspan="3">Address</th>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Line 1</th>
+                    <th>City</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Akash</td>
+                <td>Soni</td>
+                <td>akash@gmail.com</td>
+                <td>+91 43242 42544</td>
+                <td>xyz</td>
+                <td>Bangalore</td>
+                <td>Karnataka</td>
+            </tr>
+            <tr>
+                <td>Soumya</td>
+                <td>Agarwal</td>
+                <td>soumya@gmail.com</td>
+                <td>+91 43242 42544</td>
+                <td>abc</td>
+                <td>Indore</td>
+                <td>Madhya Pradesh</td>
+            </tr>
+            <tr>
+                <td>Akash</td>
+                <td>Soni</td>
+                <td>akash@gmail.com</td>
+                <td>+91 43242 42544</td>
+                <td>xyz</td>
+                <td>Bangalore</td>
+                <td>Karnataka</td>
+            </tr>
+            <tr>
+                <td>Akash</td>
+                <td>Soni</td>
+                <td>akash@gmail.com</td>
+                <td>+91 43242 42544</td>
+                <td>xyz</td>
+                <td>Bangalore</td>
+                <td>Karnataka</td>
+            </tr>
+        </table>
+
+
+        <br><br><hr><br><br>
+
+        <!-- form tags -->
+        <fieldset>
+            <legend>HTML Form tags:</legend>
+            <form method="post" action="login.html">
+                <formgroup>
+                    <label for="uname">Username:</label>
+                    <input type="text" id="uname" name="uname" placeholder="John Doe"/>
+                </formgroup>
+                <textarea rows="10" cols="50"></textarea>
+                <button type="button">Click Me!</button>
+            </form>
+        </fieldset>
+
+        <br><br><br>
+
+        <form>
+            <fieldset>
+                <legend>HTML Input Tags:</legend>
+                
+                <!--text fields-->
+                <input class="textbox" type="text" name="name_inp" id="name_txt" class="textbox" value="Hello" required/>
+                <input class="textbox" type="url" placeholder="Enter a URL"/>
+                <input class="textbox" type="search" />
+                <input class="textbox" type="password" />
+                <input class="textbox" id="number-input" type="number" />
+                <input class="textbox" id="email-input" type="email" />
+                <textarea class="textbox" rows="10" cols="50"></textarea><br><br>
+    
+                <!-- date/time -->
+                <input id="date-picker" type="date" name="date">
+                <input type="datetime-local">
+                <input type="datetime" >
+                <input type="month">
+                <input type="week">
+                <input type="time">
+                <br><br>
+    
+                <!--check box-->
+                <input name="chk1" type="checkbox"><label>Option 1</label>
+                <input name="chk2" type="checkbox"><label>Option 2</label>
+    
+                <!-- radiobtn -->
+                <input name="gender" type="radio" value="Male"><label>Male</label>
+                <input name="gender" type="radio" value="female"><label>Female</label>
+                <input name="gender" type="radio" value="others"><label>Others</label>
+    
+                <!-- selectors -->
+                <input type="color" name="color">
+                <input type="file">
+                <input type="image" src="list.png" alt="Submit" width="48" height="48">
+                <input type="range" name="range" min="0" max="10">
+    
+                <input type="button" value="CLICK" />
+                <input type="submit" value="SUBMIT"/>
+                <input type="reset" />
+    
+                <button type="submit">Submit LOGIN</button>
+                <button type="menu">MENU BUTTON</button>
+                <button type="button">Button</button>
+                <button type="reset">Reset</button>
+            </fieldset>
+        </form>
+
+        <br><br><hr><br><br>
+        
+        <script>
+            //javascript code
+        </script>
+    </body>
+</html>
