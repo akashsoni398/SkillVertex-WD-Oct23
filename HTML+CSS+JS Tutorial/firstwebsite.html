@@ -14,10 +14,10 @@
             
             */
             body {
-                background-color: white;
-                background: url(./assets/sample-image.jpg);
+                background: url(./assets/sample-image.png);
                 background-position: center;
                 background-size: contain;
+                background-color: white;
             }
 
             /* CSS selectors */
@@ -25,6 +25,7 @@
                 /* id selector (#) */
                 #para1 {
                     font-size: 25px;
+                    text
                 }
 
                 /* class selector (.) */
@@ -35,6 +36,17 @@
                 /* tag selector */
                 p {
                     color: chocolate;
+                }
+
+                div {
+                    transition: margin-right 4s ease-in-out;
+                }
+
+                div {
+                    border: 4px solid red;
+                    margin: 10px;
+                    padding: 10px;
+                    background-color: white;
                 }
 
                 /* grouping selector (,) */
@@ -50,22 +62,47 @@
                 /* attribute selector */
                 img[src="./assets/sample-image.jpg"] {
                     height: 250px;
-                    
                 }
 
-                /* descendent selector */
+                /* descendent selector (<space>)*/
+                #sam div {
+                    background-color: aquamarine;
+                }
 
-                /* child selector */
+                /* child selector (>) */
+                #rohan > div {
+                    background-color:blueviolet;
+                }
 
-                /* adjacent selector */
+                /* adjacent(next) selector (+) */
+                #lee + div {
+                    background-color: blue;
+                }
 
-                /* sibling selector */
-
-
+                /* sibling selector (~) */
+                #ella ~ div {
+                    background-color:chartreuse;
+                }
         </style>    
     </head>
     <body>
         <!-- body of the website -->
+
+        <div id="john">
+            <div id="sam">
+                <div id="lee"></div>
+                <div id="bob"></div>
+                <div id="ella"></div>
+                <div id="sim"></div>
+                <div id="chris"></div>
+            </div>
+            <div id="rohan">
+                <div id="jim"></div>
+                <div id="sal">
+                    <div id="rohit"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- basic tags -->
         <p id="para1">This is a paragraph tag</p>
@@ -97,7 +134,9 @@
         <br><br><hr><br><br>
 
         <!-- multimedia tags -->
-        <img src="./assets/sample-image.jpg" height="150px" />
+        <div height="1000px" width="500px">
+            <img src="./assets/sample-image.jpg" height="150px" />
+        </div>
         <audio controls>
             <source src="https://d6cp9b00-a.akamaihd.net/downloads/ringtones/files/mp3/dil-hai-k-manta-nahi-60987.mp3" type="audio/mpeg">
         </audio>
