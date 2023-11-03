@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,172 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>music Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/base.css" />
-    <style>
-        @font-face {
-            font-family: MuktaRegular;
-            src: url(./assets/Mukta-Regular.ttf);
-        }
-        @font-face {
-            font-family: Croissant;
-            src: url(./assets/CroissantOne-Regular.ttf);
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            font-family:MuktaRegular;
-        }
-        body {
-            background-color: rgb(255, 253, 240);
-        }
-        #header-1 {
-            background-color: #222; 
-            text-align: right;
-        }
-        #header-1 > a {
-            color: white;
-            text-decoration:none;
-            margin-right: 2.5vw;
-            font-size: 15px;
-        }
-        #dropdown {
-            display: inline-block;
-        }
-        #dropdown-btn {
-            border: 0;
-            background-color: rgb(0, 162, 0);
-            color: white;
-            padding: 8px 25px;
-            font-size: 18px;
-            font-family: Croissant;
-        }
-        #header-1 #dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            z-index: 1;
-        }
-        #dropdown-content a {
-            display: block;
-            background-color: #d1d1d1;
-            color: #333;
-            padding: 5px 15px;
-            text-decoration: none;
-        }
-        #dropdown-content a:hover {
-            background-color: #aeaeae;
-        }
-        #dropdown-btn:hover {
-            background-color:rgb(0, 101, 0);
-            cursor:pointer;
-        } 
-        #dropdown:hover #dropdown-content {
-            display: block;
-        }
-        img[src="./assets/images/logo.gif"] {
-            height: 120px;
-            width: 120px;
-        }
-        #header-2 {
-            background-color: #fbc916;
-            height: 120px;
-            position: relative;
-        }
-        #header-2 #branding h1 {
-            position: absolute;
-            top: 5px;
-            left: 130px;
-            font-family: fantasy;
-            font-size: 70px;
-            font-weight: normal;
-        }
-        #header-2 #branding span {
-            position: absolute;
-            top: 85px;
-            left: 130px;
-            font-size: 19px;
-            font-weight: normal;
-        }
-
-        #header-2 #search {
-            position: absolute;
-            top: 45px;
-            right: 40px;
-        }
-        #header-2 #search form {
-            position: relative;
-        }
-        #header-2 #search input {
-            position: absolute;
-            right: 0;
-            width: 210px;
-            height: 30px;
-            padding-left: 5px;
-            border-radius: 5px;
-        }
-        #header-2 #search button {
-            position: absolute;
-            top: 3px;
-            right: 1.5px;
-            width: 30px;
-            height: 30px;
-            border: none;
-            background-color: transparent;
-        }
-        nav {
-            background-color: #333;
-            display: flex;
-            flex-direction: row;
-            justify-content:space-evenly
-        }
-        nav li {
-            list-style-type: none;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            padding: 10px;
-            font-size: 20px;
-        }
-        footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            background-color: #333;
-        }
-        footer #branding {
-            position: relative;
-            display: flex;
-            flex-direction:row ;
-            color: white;
-        }
-        @media screen and (max-width: 920px) {
-            footer {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                background-color: #a46565;
-            }
-            footer #branding {
-                position: relative;
-                display: flex;
-                flex-direction:row ;
-            }
-        }
-    </style>
 </head>
 <body>
     <header id="header-1">
         <a href="./legal/privacy.html">Privacy Policy</a>
         <a href="./legal/tnc.html">Terms and Conditions</a>
+        
+        <?php if(!isset($_SESSION['userid'])) { ?>
+        
         <div id="dropdown">
             <button id="dropdown-btn">LOGIN</button>
             <div id="dropdown-content">
@@ -178,6 +26,20 @@
                 <a href="./auth/register.php">Create a new account</a>
             </div>
         </div>
+
+        <?php } else { ?>
+
+        <div id="dropdown">
+            <button id="dropdown-btn"><?php echo $_SESSION['username'] ?></button>
+            <div id="dropdown-content">
+                <a href="./auth/profile.php">User profile</a>
+                <a href="./auth/changepwd.php">Change password</a>
+                <a href="">Logout</a>
+            </div>
+        </div>
+
+        <?php } ?>
+
     </header>
     <header id="header-2">
         <section id="branding">
