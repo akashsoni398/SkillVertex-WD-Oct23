@@ -36,32 +36,6 @@
         else {
             $errmsg = "All input fields are mandatory";
         }
-            
-            
-            if($pwd===$cpwd) {
-                $sql_query = "SELECT count(*) as usercount FROM users WHERE email='$email';";
-                $result = mysqli_query($conn,$sql_query);
-                $rows = mysqli_fetch_array($result);
-                if($rows['usercount']!=1) {
-                    $sql_query = "INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name', '$email', '$pwd');";
-                    $result = mysqli_query($conn,$sql_query);
-                    if($result) {
-                        header("Location:login.php");
-                    }
-                    else {
-                        $errmsg = "An unknown error occured. Please contact customer support.";
-                    }
-                }
-                else {
-                    $errmsg = "Email address already registered. Login into your account.";
-                }
-            }
-            else {
-                $errmsg = "Entered passwords did not match";
-            }
-
-
-        
     }
 
 ?>

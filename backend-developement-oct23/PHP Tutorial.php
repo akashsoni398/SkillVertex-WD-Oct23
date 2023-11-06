@@ -152,10 +152,28 @@
             }
 
     // functions
-            
+        function sum($a,$b) {
+            return $a+$b;
+        }
+
+        $sum = sum(12,14);
+
+        $array = array();
+        print($array);
+        password_hash($a,$b);
+        openssl_cms_encrypt($a,$b,$c,$d);
+        openssl_cms_decrypt($a,$b,$c);
 
     // superglobal variables
-    $_
+        $GLOBALS;
+        $_GET;
+        $_POST;
+        $_SESSION;
+        $_COOKIE;
+        $_REQUEST;
+        $_FILES;
+        $_ENV;
+        $_SERVER;
 ?>
 
 

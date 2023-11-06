@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+    include "dbconfig.php";
+
+    if(isset($_GET['logout'])) {
+        session_destroy();
+        header("Location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +41,7 @@
             <div id="dropdown-content">
                 <a href="./auth/profile.php">User profile</a>
                 <a href="./auth/changepwd.php">Change password</a>
-                <a href="">Logout</a>
+                <a href="./index.php?logout=true">Logout</a>
             </div>
         </div>
 
@@ -92,8 +99,34 @@
               </div>
         </section>
         <section id="music-list">
-            <h3>Songs</h3>
-            <div id="song-details"></div>
+            <h3 class="text-center mt-5">Songs</h3>
+            <div id="song-details">
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5 mx-5 mt-2 mb-5">
+                <?php 
+                    $sql_query = "SELECT * FROM music;";
+                    $result = mysqli_query($conn,$sql_query);
+                    while($rows=mysqli_fetch_array($result)) {   
+                ?>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <img src="./assets/musicimg/<?php echo $rows['image']?>" class="card-img-top" alt="...">
+                                <audio controls style="width: 100%; border-radius: none;">
+                                    <source src="./assets/music/<?php echo $rows['link'] ?>" />
+                                </audio>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $rows['name'] ?></h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Views: <?php echo $rows['views'] ?></small>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
